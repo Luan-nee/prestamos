@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { ReactNode } from "react";
 
-function Navbar(){
-  const [count, setCount] = useState(0);
+interface props {
+  children: ReactNode;
+}
 
+function Navbar({children} : props) {
   return (
-    <>
-      <button className="btn bg-primary-300" onClick={() => setCount(count + 1)}>AUMENTAR</button>
-      <p>{count}</p>
-    </>
+    <div className="grid grid-cols-[auto,1fr]">
+      <nav className="border-black flex flex-col h-screen bg-purple-500 shadow-lg">
+          <a href="#" className="text-gray-300 hover:bg-purple-600 hover:text-white block px-3 py-2 text-xl font-medium">Inicio</a>
+          <a href="#" className="text-gray-300 hover:bg-purple-600 hover:text-white block px-3 py-2 text-xl font-medium">Servicios</a>
+          <a href="#" className="text-gray-300 hover:bg-purple-600 hover:text-white block px-3 py-2 text-xl font-medium">Contacto</a>
+      </nav>
+      <div className="flex flex-col p-2 text-2xl font-bold">
+        {children}
+      </div>
+    </div>
   );
 }
 
