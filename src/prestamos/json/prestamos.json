@@ -1,0 +1,82 @@
+[
+    {
+        "fecha": "2024-12-25 14:22:02",
+        "nombreDelProducto": "Auriculares",
+        "adelanto": 565.76,
+        "costo": 838.57,
+        "montoAPagar": 272.81,
+        "pagado": false
+    },
+    {
+        "fecha": "2024-12-18 14:22:02",
+        "nombreDelProducto": "Teclado",
+        "adelanto": 438.93,
+        "costo": 612.57,
+        "montoAPagar": 173.64,
+        "pagado": false
+    },
+    {
+        "fecha": "2024-12-05 14:22:02",
+        "nombreDelProducto": "Tablet",
+        "adelanto": 1184.05,
+        "costo": 1323.73,
+        "montoAPagar": 139.68,
+        "pagado": false
+    },
+    {
+        "fecha": "2024-12-10 14:22:02",
+        "nombreDelProducto": "Auriculares",
+        "adelanto": 1234.93,
+        "costo": 1317.36,
+        "montoAPagar": 82.43,
+        "pagado": false
+    },
+    {
+        "fecha": "2024-12-16 14:22:02",
+        "nombreDelProducto": "Auriculares",
+        "adelanto": 145.6,
+        "costo": 249.65,
+        "montoAPagar": 104.05,
+        "pagado": false
+    },
+    {
+        "fecha": "2024-12-20 14:22:02",
+        "nombreDelProducto": "Monitor Pagado",
+        "adelanto": 241.57,
+        "costo": 297.2,
+        "montoAPagar": 55.63,
+        "pagado": true
+    },
+    {
+        "fecha": "2024-12-19 14:22:02",
+        "nombreDelProducto": "Impresora",
+        "adelanto": 469.29,
+        "costo": 1410.01,
+        "montoAPagar": 940.72,
+        "pagado": false
+    },
+    {
+        "fecha": "2024-12-14 14:22:02",
+        "nombreDelProducto": "Laptop Pagado",
+        "adelanto": 133.05,
+        "costo": 1326.63,
+        "montoAPagar": 1193.58,
+        "pagado": true
+    },
+    {
+        "fecha": "2024-12-29 14:22:02",
+        "nombreDelProducto": "Teclado",
+        "adelanto": 72.8,
+        "costo": 168.7,
+        "montoAPagar": 95.9,
+        "pagado": false
+    },
+    {
+        "fecha": "2024-12-08 14:22:02",
+        "nombreDelProducto": "Teclado",
+        "adelanto": 470.09,
+        "costo": 899.15,
+        "montoAPagar": 429.06,
+        "pagado": false
+    }
+]

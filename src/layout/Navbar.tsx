@@ -1,21 +1,66 @@
-import { ReactNode } from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
-interface props {
-  children: ReactNode;
+interface Props {
+  children: React.ReactNode;
 }
 
-function Navbar({children} : props) {
+function Navbar({ children }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="grid grid-cols-[auto,1fr]">
-      <nav className="border-black flex flex-col h-screen bg-purple-500 shadow-lg">
-          <a href="#" className="text-gray-300 hover:bg-purple-600 hover:text-white block px-3 py-2 text-xl font-medium">Inicio</a>
-          <a href="#" className="text-gray-300 hover:bg-purple-600 hover:text-white block px-3 py-2 text-xl font-medium">Servicios</a>
-          <a href="#" className="text-gray-300 hover:bg-purple-600 hover:text-white block px-3 py-2 text-xl font-medium">Contacto</a>
+    <article>
+      <nav className="bg-blue-600 p-4 shadow-lg">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="text-white text-2xl font-bold">
+            <Link to="/">MiApp</Link>
+          </div>
+          <div className="block lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white focus:outline-none"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+                />
+              </svg>
+            </button>
+          </div>
+          <ul
+            className={`${
+              isOpen ? "block" : "hidden"
+            } lg:flex lg:space-x-4 lg:items-center`}
+          >
+            <li>
+              <Link to="/" className="text-white hover:text-gray-300">
+                Prestamos
+              </Link>
+            </li>
+            <li>
+              <Link to="/pagina2" className="text-white hover:text-gray-300">
+                Pagina2
+              </Link>
+            </li>
+            <li>
+              <Link to="/pagina3" className="text-white hover:text-gray-300">
+                Pagina3
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
-      <div className="flex flex-col p-2 text-2xl font-bold">
-        {children}
-      </div>
-    </div>
+      {children}
+    </article>
   );
 }
 
