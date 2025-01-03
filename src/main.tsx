@@ -5,7 +5,7 @@ import './index.css'
 import Navbar from './layout/Navbar'
 
 import RegistroDePrestamos from "./pages/RegistroDePrestamos.jsx";
-import Pagina2 from "./pages/Pagina2.jsx";
+import Registrar from "./pages/Registrar.jsx";
 import Pagina3 from "./pages/Pagina3.jsx";
 
 
@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <section>
           <Routes>
             <Route path="/" element={<RegistroDePrestamos />} />
-            <Route path="/pagina2" element={<Pagina2 />} />
+            <Route path="/pagina2" element={<Registrar />} />
             <Route path="/pagina3" element={<Pagina3 />} />
           </Routes>
         </section>
