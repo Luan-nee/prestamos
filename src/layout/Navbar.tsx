@@ -51,11 +51,6 @@ function Navbar({ children }: Props) {
                 Registrar
               </Link>
             </li>
-            <li>
-              <Link to="/pagina3" className="text-white hover:text-gray-300">
-                Pagina3
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>
