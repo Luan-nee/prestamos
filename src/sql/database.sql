@@ -1,28 +1,49 @@
-CREATE DATABASE tienda;
+ CREATE DATABASE prestamos;
 
-USE tienda;
+CREATE TABLE usuario(
+	id INT NOT NULL AUTO_INCREMENT,
+  dni VARCHAR(8) NOT NULL,
+  clave VARCHAR(50) NOT NULL,
+  nombreNegocio VARCHAR(100) NOT NULL,
+  correo VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id)
+);
 
-CREATE TABLE clientes (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE cliente(
+	id INT NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(50) NOT NULL,
+	apellido VARCHAR(50) NOT NULL,
+  dni VARCHAR(8) NOT NULL,
+  id_usuario INT NOT NULL, -- id del usuario que registró al cliente
+  foto VARCHAR(30) NOT NULL, -- url de la imagen
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE producto(
+	id INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(100) NOT NULL,
-  direccion VARCHAR(255),
-  telefono VARCHAR(20)
+  precio DECIMAL(6,2) NOT NULL,
+  PRIMARY KEY (id)
 );
 
-CREATE TABLE productos (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  descripcion TEXT,
-  precio DECIMAL(10, 2) NOT NULL
+CREATE TABLE prestamo(
+	id INT NOT NULL AUTO_INCREMENT,
+  fechaRegistrado DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  fechaDePago DATETIME NOT NULL,
+  id_producto INT NOT NULL, -- id del producto 
+  id_cliente INT NOT NULL, -- id del cliente que hizo el prestamo
+  id_usuario INT NOT NULL, -- id del dueño del producto
+  pagado TINYINT NOT NULL DEFAULT 0,
+  adelanto DECIMAL(6,2) NOT NULL, -- S/ del adelanto
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_producto) REFERENCES producto(id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE,
+  FOREIGN KEY (id_cliente) REFERENCES cliente(id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE,
+  FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE
 );
 
-CREATE TABLE prestamos (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  cliente_id INT,
-  producto_id INT,
-  cantidad INT NOT NULL,
-  fecha_prestamo DATE NOT NULL,
-  fecha_devolucion DATE,
-  FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-  FOREIGN KEY (producto_id) REFERENCES productos(id)
-);
